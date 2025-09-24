@@ -1,79 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manish Kumar Pankaj - Resume</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; margin: 0; padding: 0; }
-        .container { max-width: 900px; margin: 20px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
-        .header { text-align: center; padding-bottom: 20px; border-bottom: 2px solid #ddd; }
-        .header h1 { margin: 0; font-size: 2.5em; color: #2c3e50; }
-        .header p { margin: 5px 0 0; color: #777; font-size: 1em; }
-        .section { margin-top: 30px; }
-        .section-title { font-size: 1.5em; color: #34495e; border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-bottom: 15px; }
-        ul { list-style-type: none; padding: 0; margin: 0; }
-        ul li { margin-bottom: 10px; }
-        .experience-item, .education-item { margin-bottom: 20px; }
-        .experience-item h3, .education-item h3 { margin: 0; color: #555; }
-        .experience-item p, .education-item p { margin: 5px 0 0; font-style: italic; color: #666; }
-        a { color: #3498db; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manish Kumar Pankaj - Portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #2c3e50; color: #fff; padding: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    header h1 { margin: 0; font-size: 2.5em; }
+    header p { margin: 5px 0; }
+    .header-content { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .info { text-align: left; }
+    section { padding: 30px; max-width: 900px; margin: auto; }
+    h2 { color: #2c3e50; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+    ul { list-style-type: none; padding: 0; }
+    ul li { background: #fff; margin: 10px 0; padding: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    footer { text-align: center; padding: 20px; background: #2c3e50; color: #fff; margin-top: 20px; }
+    a { color: #3498db; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Manish Kumar Pankaj</h1>
-            <p><strong>Email:</strong> manishkumarpankaj119@gmail.com | <strong>Phone:</strong> 9716236380 | <a href="https://www.linkedin.com/in/manish-kumar-pankaj-82a9a0338" target="_blank">LinkedIn Profile</a></p>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Summary</h2>
-            <p>A highly motivated and adaptable IT professional with a dual academic background in <strong>Data Science</strong> and <strong>Information Technology</strong>. Possessing a strong foundation in cybersecurity and data analysis, with a keen interest in applying emerging technologies to solve complex problems. A proactive team player with proven skills in leadership, problem-solving, and critical thinking, gained through academic projects and extracurricular activities.</p>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Experience</h2>
-            <ul>
-                <li class="experience-item">
-                    <h3>Intern - HighFurries</h3>
-                    <p><em>September 2025 - Present | New Delhi, Delhi, India (Hybrid)</em></p>
-                    <p>As an intern, I am currently gaining practical experience and applying my technical skills in a professional environment. [Add specific responsibilities and achievements here to make this section more impactful.]</p>
-                </li>
-                <li class="experience-item">
-                    <h3>Core Member - Boundless - IITM BS Travel Society</h3>
-                    <p><em>September 2025 - Present</em></p>
-                    <p>In this role, I contribute to the planning and execution of society events, fostering teamwork and organizational skills. [Add specific details about your contributions here.]</p>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2 class="section-title">Education</h2>
-            <ul>
-                <li class="education-item">
-                    <h3>Bachelor of Technology in Information Technology</h3>
-                    <p>University School of Information, Communication and Technology (USICT) | 2025 - 2029 (Expected)</p>
-                </li>
-                <li class="education-item">
-                    <h3>Bachelor of Science in Data Science and Application</h3>
-                    <p>Indian Institute of Technology (IIT) Madras | 2025 - 2029 (Expected)</p>
-                </li>
-                <li class="education-item">
-                    <h3>Ch. Baldev Singh Model School</h3>
-                    <p>High School | 2025</p>
-                </li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Skills</h2>
-            <ul>
-                <li><strong>Technical Skills:</strong> Data Analysis, Cybersecurity Fundamentals, Programming (Python, SQL), Web Development (HTML, CSS), IT Support, Networking.</li>
-                <li><strong>Soft Skills:</strong> Problem Solving, Critical Thinking, Teamwork, Leadership, Adaptability, Communication, Time Management.</li>
-            </ul>
-        </div>
+  <header>
+    <div class="header-content">
+      <img src="IMG_20250903_160712.jpg" alt="Profile Photo" class="profile-pic">
+      <div class="info">
+        <h1>Manish Kumar Pankaj</h1>
+        <p>Email: <a href="mailto:manishkumarpankaj119@gmail.com">manishkumarpankaj119@gmail.com</a></p>
+        <p>Phone: 9716236380</p>
+        <p><a href="https://www.linkedin.com/in/manish-kumar-pankaj-82a9a0338" target="_blank">LinkedIn Profile</a></p>
+      </div>
     </div>
+  </header>
+
+  <section>
+    <h2>Profile</h2>
+    <p>Motivated to continuously learn and apply emerging technologies in IT, Cybersecurity, and Data Science. Strong communicator with a passion for integrating analytical thinking and technical expertise to improve operational efficiencies and drive innovation.</p>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <ul>
+      <li><b>Bachelor of Science - Data Science and Application</b>, IIT Madras (2025 - 2029)</li>
+      <li><b>Bachelor of Technology - Information Technology</b>, USICT (2025 - 2029)</li>
+      <li><b>Ch. Baldev Singh Model School</b> (2023 - 2025)</li>
+      <li><b>Shanti Gyan Niketan School</b> (2012 - 2023)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <ul>
+      <li>Contributed to event coordination and tech support for school programs.</li>
+      <li>Active in cultural and academic event management with technical involvement.</li>
+      <li>Developed leadership and organizational skills through NCC and farewell events.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <p>English, Hindi</p>
+  </section>
+
+  <section>
+    <h2>Hobbies</h2>
+    <ul>
+      <li>Coding</li>
+      <li>Photography</li>
+      <li>Gaming</li>
+      <li>Painting</li>
+      <li>Running</li>
+      <li>Data Analysis</li>
+      <li>Cycling</li>
+      <li>Volunteering</li>
+      <li>Music</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Qualities</h2>
+    <ul>
+      <li>Teamwork</li>
+      <li>Problem Solving</li>
+      <li>Critical Thinking</li>
+      <li>Creativity</li>
+      <li>Leadership</li>
+      <li>Adaptability</li>
+      <li>Time Management</li>
+      <li>Decision Making</li>
+      <li>Multitasking</li>
+      <li>Reliability</li>
+    </ul>
+  </section>
 </body>
 </html>
