@@ -1,118 +1,777 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manish Kumar Pankaj - Portfolio</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #2c3e50; color: #fff; padding: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; }
-    header h1 { margin: 0; font-size: 2.5em; }
-    header p { margin: 5px 0; }
-    .header-content { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 20px; }
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    }
-    .info { text-align: left; }
-    section { padding: 30px; max-width: 900px; margin: auto; }
-    h2 { color: #2c3e50; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
-    ul { list-style-type: none; padding: 0; }
-    ul li { background: #fff; margin: 10px 0; padding: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    footer { text-align: center; padding: 20px; background: #2c3e50; color: #fff; margin-top: 20px; }
-    a { color: #3498db; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manish Kumar Pankaj - Portfolio CV</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Import Inter Font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        /* RESET & VARIABLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* MODERN PROFESSIONAL LIGHT THEME */
+            --bg-body: #f0f4f8;
+            --bg-container: #ffffff;
+            --bg-secondary: #f8fafc; /* Light Slate */
+            --bg-tertiary: #f1f5f9;
+            
+            --accent-primary: #2563eb; /* Royal Blue */
+            --accent-secondary: #4f46e5; /* Indigo */
+            
+            --text-primary: #1e293b; /* Slate 800 */
+            --text-secondary: #475569; /* Slate 600 */
+            --text-muted: #64748b; /* Slate 500 */
+            
+            --border-color: #e2e8f0; /* Slate 200 */
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        html, body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            html, body {
+                background: white !important;
+                color: #000 !important;
+                padding: 0 !important;
+            }
+            .container {
+                box-shadow: none !important;
+                border: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .footer-fixed {
+                display: none !important;
+            }
+            /* Ensure background colors print for headers/tags */
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            padding: 40px 16px 80px 16px; /* Extra bottom padding for fixed footer */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            background: var(--bg-container);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px var(--shadow-color);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #eff6ff 0%, #eef2ff 100%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative circle */
+        header::before {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.05), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .header-content {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 32px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%; /* Circular profile pic for modern look */
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: #e2e8f0;
+        }
+
+        .header-info h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .header-info .tagline {
+            font-size: 1.1rem;
+            color: var(--accent-primary);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .contact-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .contact-badge:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .contact-badge i {
+            color: var(--accent-primary);
+        }
+
+        /* MAIN CONTENT */
+        main {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 2.2fr 1.3fr;
+            gap: 48px;
+        }
+
+        @media (max-width: 900px) {
+            main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media print {
+            main {
+                padding: 32px;
+                grid-template-columns: 2.2fr 1.3fr;
+            }
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: white;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-primary);
+        }
+
+        /* ITEMS */
+        .item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 24px;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .item:hover {
+            border-left-color: var(--accent-primary);
+        }
+        
+        /* Specific tweak for print to avoid borders looking weird */
+        @media print {
+            .item {
+                border-left: none;
+                padding-left: 0;
+                margin-bottom: 16px;
+            }
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+
+        .item-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .item-subtitle {
+            font-size: 0.95rem;
+            color: var(--accent-primary);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .item-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .item-bullets {
+            margin: 8px 0 8px 18px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .item-bullets li {
+            margin-bottom: 4px;
+        }
+
+        /* TAGS */
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: #eff6ff;
+            color: var(--accent-primary);
+            border: 1px solid #dbeafe;
+        }
+
+        .tag a {
+            color: inherit;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .tag a:hover {
+            text-decoration: underline;
+        }
+
+        /* SIDEBAR STYLES */
+        .sidebar section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        @media print {
+            .sidebar section {
+                background: transparent;
+                border: none;
+                padding: 0;
+            }
+        }
+
+        .sidebar .item {
+            border-left: none;
+            padding-left: 0;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .sidebar .item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .sidebar .item-title {
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .sidebar .item-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+
+        /* SKILL CHIPS */
+        .skill-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .skill-chip {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            background: white;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        /* FIXED FOOTER */
+        .footer-fixed {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 600px) {
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                justify-items: center;
+            }
+            main {
+                padding: 24px;
+            }
+            .header-info h1 {
+                font-size: 1.8rem;
+            }
+            .contact-links {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="header-content">
-      <img src="IMG_20250903_160712.jpg" alt="Profile Photo" class="profile-pic">
-      <div class="info">
-        <h1>Manish Kumar Pankaj</h1>
-        <p>Email: <a href="mailto:manishkumarpankaj119@gmail.com">manishkumarpankaj119@gmail.com</a></p>
-        <p>Phone: 9716236380</p>
-        <p><a href="https://www.linkedin.com/in/manish-kumar-pankaj-82a9a0338" target="_blank">LinkedIn Profile</a></p>
-      </div>
+
+<div class="container">
+    <header>
+        <div class="header-content">
+            <!-- Placeholder image used here. Replace src with your actual image path -->
+            <img src="https://placehold.co/140x140/e2e8f0/2563eb?text=MKP" alt="Manish Kumar Pankaj" class="profile-pic">
+            
+            <div class="header-info">
+                <h1>Manish Kumar Pankaj</h1>
+                <div class="tagline">B.Tech IT @ USICT | BS Data Science @ IIT Madras</div>
+                
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/manish-kumar-pankaj-82a9a0338" target="_blank" class="contact-badge">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="mailto:manishkumarpankaj119@gmail.com" class="contact-badge">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <span class="contact-badge">
+                        <i class="fas fa-phone"></i> +91-9716236380
+                    </span>
+                    <span class="contact-badge">
+                        <i class="fas fa-map-marker-alt"></i> New Delhi, India
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="left-column">
+            
+            <!-- PROFILE -->
+            <section>
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-user"></i></div>
+                    <div class="section-title">Profile</div>
+                </div>
+                <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.7;">
+                    First-year B.Tech (Information Technology) and BS Data Science student interested in software development and data analysis. Passionate about building web applications and solving problems through technology.
+                </p>
+            </section>
+
+            <!-- EXPERIENCE -->
+            <section>
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="section-title">Experience</div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Database Intern</div>
+                            <div class="item-subtitle">HighFurries (Pet-Tech Startup) | Hybrid</div>
+                        </div>
+                        <div class="item-date">Sep 2025 – Dec 2025</div>
+                    </div>
+                    <ul class="item-bullets">
+                        <li>Organised and managed databases for internal products and workflows.</li>
+                        <li>Helped keep records structured, accurate, and easy to use for the team.</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">NCC Cadet (Senior Division)</div>
+                            <div class="item-subtitle">National Cadet Corps | 2DAB</div>
+                        </div>
+                        <div class="item-date">Nov 2025 – Present</div>
+                    </div>
+                    <ul class="item-bullets">
+                        <li>Engaging in rigorous military training to foster discipline, leadership qualities, and physical fitness.</li>
+                        <li>Participating in team-building drills to enhance organizational skills.</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Core Member</div>
+                            <div class="item-subtitle">Technical Team, Boundless Travel Society</div>
+                        </div>
+                        <div class="item-date">Sep 2025 – Present</div>
+                    </div>
+                    <ul class="item-bullets">
+                        <li>Created HTML trip communication emails such as the Meghalaya trip mailers.</li>
+                        <li>Updated registrations, trip details, and website entries for upcoming trips.</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">NCC Cadet (Junior Division)</div>
+                            <div class="item-subtitle">National Cadet Corps | DAS2</div>
+                        </div>
+                        <div class="item-date">Jun 2020 – Feb 2021</div>
+                    </div>
+                    <ul class="item-bullets">
+                        <li>Completed foundational training.</li>
+                        <li>Developed early discipline and teamwork skills through unit-level activities.</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Upcoming Research Intern</div>
+                            <div class="item-subtitle">Prayan Foundation (NGO)</div>
+                        </div>
+                        <div class="item-date">Post end-term exams</div>
+                    </div>
+                    <div class="item-description">
+                        Will support research tasks, documentation, and impact-focused work for social causes.
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section>
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-code"></i></div>
+                    <div class="section-title">Projects & Activities</div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Happy Space: Mental Wellness Platform</div>
+                        <div class="item-date">2025</div>
+                    </div>
+                    <div class="item-description">
+                        Frontend for a mental wellness platform for students (Classes 8-12) and schools.
+                    </div>
+                    <ul class="item-bullets">
+                        <li>Built pages for student journeys, resources, and school information using HTML/CSS.</li>
+                    </ul>
+                    <div class="tag-row">
+                        <span class="tag"><a href="https://project-page-master.vercel.app/" target="_blank">View Project <i class="fas fa-external-link-alt"></i></a></span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Certificate Generator & Verification</div>
+                        <div class="item-date">2025</div>
+                    </div>
+                    <div class="item-description">
+                        Web-based flow to generate certificates with unique IDs, export PDFs, and verify them.
+                    </div>
+                    <div class="tag-row">
+                        <span class="tag"><a href="https://welcome-chi-three.vercel.app/" target="_blank">Generator <i class="fas fa-external-link-alt"></i></a></span>
+                        <span class="tag"><a href="https://mk-pankaj.github.io/verify/" target="_blank">Verifier <i class="fas fa-external-link-alt"></i></a></span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Student Performance Dataset Analysis</div>
+                        <div class="item-date">2025</div>
+                    </div>
+                    <div class="item-description">
+                        Exploratory analysis of a synthetic student performance dataset using Google Sheets.
+                    </div>
+                    <ul class="item-bullets">
+                        <li>Worked with columns such as gender, ethnicity, parental education, and study time.</li>
+                                              <li>Used formulas, filters, and charts to understand trends and relationships.</li>
+                    </ul>
+                    <div class="tag-row">
+                        <span class="tag"><a href="https://docs.google.com/spreadsheets/d/1hP5FB2vl" target="_blank">Sheet 1 <i class="fas fa-table"></i></a></span>
+                        <span class="tag"><a href="https://docs.google.com/spreadsheets/d/1BLch4VKc" target="_blank">Sheet 2 <i class="fas fa-table"></i></a></span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Kala Mitra: Artisan Commerce PWA</div>
+                        <div class="item-date">2024</div>
+                    </div>
+                    <div class="item-description">
+                        Prototype Progressive Web App (PWA) built with React and TypeScript to help artisans.
+                    </div>
+                    <ul class="item-bullets">
+                        <li>Explores fair pricing, AI-powered storytelling for products, and voice-enabled features.</li>
+                    </ul>
+                    <div class="tag-row">
+                        <span class="tag"><a href="https://kala-mitra-jca1.vercel.app/" target="_blank">View App <i class="fas fa-external-link-alt"></i></a></span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Proposal Page: Personal Website</div>
+                        <div class="item-date">2024</div>
+                    </div>
+                    <div class="item-description">
+                        A fun love-proposal single-page website built as a creative HTML/CSS project.
+                    </div>
+                    <div class="tag-row">
+                        <span class="tag"><a href="https://mk-pankaj.github.io/Manish/" target="_blank">View Site <i class="fas fa-external-link-alt"></i></a></span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- EDUCATION -->
+            <section>
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="section-title">Education</div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">IIT Madras</div>
+                            <div class="item-subtitle">BS Data Science & Applications</div>
+                        </div>
+                        <div class="item-date">2025 – 2029</div>
+                    </div>
+                    <div class="item-description">Online Degree Program</div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">USICT, GGSIPU</div>
+                            <div class="item-subtitle">B.Tech Information Technology</div>
+                        </div>
+                        <div class="item-date">2025 – 2029</div>
+                    </div>
+                    <div class="item-description">New Delhi, India</div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Ch. Baldev Singh Model School</div>
+                            <div class="item-subtitle">Senior Secondary (PCM)</div>
+                        </div>
+                        <div class="item-date">2023 – 2025</div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Shanti Gyan Niketan School</div>
+                            <div class="item-subtitle">Schooling</div>
+                        </div>
+                        <div class="item-date">2012 – 2023</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <aside class="sidebar">
+            <!-- SKILLS -->
+            <section>
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-tools"></i></div>
+                    <div class="section-title">Skills</div>
+                </div>
+
+                <div class="item">
+                    <div class="item-title">Programming</div>
+                    <div class="item-subtitle">Basic C and Python; can write simple programs and scripts.</div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Web Basics</div>
+                    <div class="item-subtitle">HTML and CSS for static pages; learning React and TypeScript.</div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Tools</div>
+                    <div class="item-subtitle">VS Code, Google Docs/Sheets, basic GitHub usage for version control.</div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Data Handling</div>
+                    <div class="item-subtitle">Basic data organisation, cleaning, and querying concepts.</div>
+                </div>
+            </section>
+
+            <!-- LANGUAGES -->
+            <section>
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-language"></i></div>
+                    <div class="section-title">Languages</div>
+                </div>
+
+                <div class="item">
+                    <div class="item-title">English</div>
+                    <div class="item-subtitle">Fluent</div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Hindi</div>
+                    <div class="item-subtitle">Native</div>
+                </div>
+            </section>
+
+            <!-- HOBBIES & QUALITIES -->
+            <section>
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-heart"></i></div>
+                    <div class="section-title">Interests & Qualities</div>
+                </div>
+                <div class="skill-chips">
+                    <span class="skill-chip">Coding</span>
+                    <span class="skill-chip">Photography</span>
+                    <span class="skill-chip">Gaming</span>
+                    <span class="skill-chip">Drawing</span>
+                    <span class="skill-chip">Running</span>
+                    <span class="skill-chip">Cycling</span>
+                    <span class="skill-chip">Music</span>
+                    <span class="skill-chip">Teamwork</span>
+                    <span class="skill-chip">Discipline</span>
+                    <span class="skill-chip">Problem-solving</span>
+                    <span class="skill-chip">Leadership</span>
+                    <span class="skill-chip">Adaptability</span>
+                </div>
+            </section>
+
+            <!-- INVOLVEMENT -->
+            <section>
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-users"></i></div>
+                    <div class="section-title">Involvement</div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Event & Cultural Activities</div>
+                    <div class="item-subtitle">
+                        Helped coordinate cultural and academic events with logistics and registration.
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Farewell & School Functions</div>
+                    <div class="item-subtitle">
+                        Contributed to farewell programs and school functions, strengthening community.
+                    </div>
+                </div>
+            </section>
+        </aside>
+    </main>
+
+    <!-- Fixed Footer Bar -->
+    <div class="footer-fixed">
+        <span style="color: #64748b; font-size: 0.9rem;">2025 Manish Kumar Pankaj Portfolio CV</span>
     </div>
-  </header>
+</div>
 
-  <section>
-    <h2>Profile</h2>
-    <p>Motivated to continuously learn and apply emerging technologies in IT, Cybersecurity, and Data Science. Strong communicator with a passion for integrating analytical thinking and technical expertise to improve operational efficiencies and drive innovation.</p>
-  </section>
-
-  <section>
-    <h2>Education</h2>
-    <ul>
-      <li><b>Bachelor of Science - Data Science and Application</b>, IIT Madras (2025 - 2029)</li>
-      <li><b>Bachelor of Technology - Information Technology</b>, USICT (2025 - 2029)</li>
-      <li><b>Ch. Baldev Singh Model School</b> (2023 - 2025)</li>
-      <li><b>Shanti Gyan Niketan School</b> (2012 - 2023)</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Experience</h2>
-    <ul>
-      <li>Contributed to event coordination and tech support for school programs.</li>
-      <li>Active in cultural and academic event management with technical involvement.</li>
-      <li>Developed leadership and organizational skills through NCC and farewell events.</li>
-    </ul>
-  </section>
-
-  <section>
-  <h2>Work Experience</h2>
-  <ul>
-    <li>
-      <b>Intern</b>, HighFurries (Sep 2025 - Present, 1 mo) <br>
-      Location: New Delhi, Delhi, India <br>
-      Mode: Hybrid
-    </li>
-    <li>
-      <b>Core Member</b>, Boundless - IITM BS Travel Society (Sep 2025 - Present, 1 mo)
-    </li>
-  </ul>
-  </section>
-
-  <section>
-    <h2>Languages</h2>
-    <p>English, Hindi</p>
-  </section>
-
-  <section>
-    <h2>Hobbies</h2>
-    <ul>
-      <li>Coding</li>
-      <li>Photography</li>
-      <li>Gaming</li>
-      <li>Painting</li>
-      <li>Running</li>
-      <li>Data Analysis</li>
-      <li>Cycling</li>
-      <li>Volunteering</li>
-      <li>Music</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Qualities</h2>
-    <ul>
-      <li>Teamwork</li>
-      <li>Problem Solving</li>
-      <li>Critical Thinking</li>
-      <li>Creativity</li>
-      <li>Leadership</li>
-      <li>Adaptability</li>
-      <li>Time Management</li>
-      <li>Decision Making</li>
-      <li>Multitasking</li>
-      <li>Reliability</li>
-    </ul>
-  </section>
 </body>
 </html>
